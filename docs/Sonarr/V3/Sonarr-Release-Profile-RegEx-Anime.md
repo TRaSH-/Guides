@@ -209,7 +209,7 @@ The reason most of these are added is due to their shitty quality or just in gen
 
 !!! important
 
-    If you would like `dub` releases then remove the last 2 lines and do not add them.
+    If you would like `dub` releases then remove the last 2 lines and do not add them to Must Not Contain. Instead follow the optional suggestion found below.
 
 ```bash
 /(\[EMBER\]|-EMBER\b|DaddySubs)/i,
@@ -252,6 +252,28 @@ Add this to your Preferred with a score of **[501]**
 
 !!! important
     These next few are optional but they are here to move releases up over lower tiers of `1080/720p` or `WEB-DL/Blu-Ray`. Will add another note like this to end the optional section.
+
+---
+
+If you prefer a Dub relase when no Dual-Audio is available add this to your Preferred with a score of **[301]**
+
+!!! note
+    Ensure you did not add this in Must Not Contain above.
+
+```bash
+/((funi|eng(lish)?)_?dub|\bdub(bed)?\b)/i
+```
+
+---
+
+If you prefer a Dub release when no Dual-Audio is available add this to your Preferred with a score of **[100]**
+
+!!! note
+    Ensure you did not add this in Must Not Contain above.
+
+```bash
+/(Golumpa|torenter69|KamiFS|KaiDubs)/i
+```
 
 ---
 
