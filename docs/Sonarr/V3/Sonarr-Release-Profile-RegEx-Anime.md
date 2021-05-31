@@ -179,11 +179,9 @@ Add this to your Preferred with a score of **[0]**. This is for renames only and
 /(dual[ ._-]?audio)/i
 ```
 
-#### Optional (uncut|unrated|uncensored)
+#### Uncut|Unrated|Uncensored
 
-Add this to your Preferred with a score of **[100]/[-10000]**
-
-If you would like it to be priority then set to **100**. If you do not want uncensored set it to **-10000**. If you don't care either way just leave it out. The reasoning behind only **100** is so that it doesn't trump other release further up in the chain, this way it will trump maybe a couple release but not more. And **-10000** to hopefully put it at the bottom of any tier list if you don't want it.
+Add this to your Preferred with a score of **[100]**
 
 ```bash
 /(uncut|unrated|uncensored|\b(AT[-_. ]?X)\b)/i
@@ -217,9 +215,9 @@ The reason most of these are added is due to their shitty quality or just in gen
 /(CuaP|PnPSubs|ICEBLUE|SLAX|U3-Web)/i,
 /(Raws-Maji|\bKRP\b|M@nI|Kanjouteki|PuyaSubs)/i,
 /\b(Beatrice|ohys|Kawaiika|neko|daddy)[ ._-]?(raws)\b/i,
-/\b(LowPower|Scryous)[ ._-]?(raws)\b/i,
+/\b(LowPower|Scryous|Skymoon)[ ._-]?(raws)\b/i,
 /\b(NS|AREY|BDMV|BDVD|BJX|DKB|DP|TnF)\b/i,
-/(Amb3r|DsunS|ExREN|\$tore-Chill)/i,
+/(Amb3r|DsunS|ExREN|\$tore-Chill|\bVF\b)/i,
 /(\[Hatsuyuki\]|-Hatsuyuki\b|\[Hitoku\]|-Hitoki\b)/i,
 /(\[Foxtrot\]|-Foxtrot\b|HollowRoxas|\bMGD\b)/i,
 /(JacobSwaggedUp|KEKMASTERS|\[Mites\]|-Mites\b)/i,
@@ -227,6 +225,7 @@ The reason most of these are added is due to their shitty quality or just in gen
 /(Rando235|RandomRemux|Reaktor|RightShiftBy2)/i,
 /(\bSHFS\b|StrayGods|\bUQW\b|Yabai_Desu_Ne)/i,
 /(YakuboEncodes|\b(WtF[ ._-]?Anime)\b)/i,
+/(\[Anime Land\]|-Anime Land\b)
 /((funi|eng(lish)?)_?dub|\bdub(bed)?\b)/i,
 /(Golumpa|torenter69|KamiFS|KaiDubs)/i
 ```
@@ -249,47 +248,6 @@ Add this to your Preferred with a score of **[501]**
 ```
 
 ---
-
-!!! important
-    These next few are optional but they are here to move releases up over lower tiers of `1080/720p` or `WEB-DL/Blu-Ray`. Will add another note like this to end the optional section.
-
----
-
-Add this to your Preferred with a score of **[100]**
-
-!!! note
-    We are adding this as **100** so that any unknown `Blu-Ray` can jump tiers inside the Subs categories but not interfere with any tiers above.
-
-```bash
-/\b(?:(BluRay|Blu-Ray|BDMux|BD(?!$))|(BDRip)|(BRRip))(?:\b|$|[ .])/ix
-```
-
----
-
-Add this to your Preferred with a score of **[15]**
-
-```bash
-/\b(WEB[-_. ]DL|WEBDL|WebHD|[. ]WEB[. ](?:[xh]26[45]|DDP?5[. ]1)|[. ](?-i:WEB)$|\d+0p(?:WEB-DLMux|\b\s\/\sWEB\s\/\s\b))/ix
-```
-
----
-
-Add this to your Preferred with a score of **[10]**
-
-```bash
-/(WebRip|Web-Rip|WEBMux)/ix
-```
-
----
-
-Add this to your Preferred with a score of **[5]**
-
-```bash
-/\b(?:(1080p|1920x1080|1440p|FHD|1080i|4kto1080p))\b/i
-```
-
-!!! important
-    This is the end of the optional section.
 
 Add this to your Preferred with a score of **[4000]**
 
@@ -493,45 +451,7 @@ FanSubs 3rd Tier
 
 ---
 
-!!! note
-
-    These are extra parameters that can help and are not needed but are nice to have. They are set low mainly to supercede themselves and not interfere with other releases.
-
-Add this to your Preferred with a score of **[1]**
-
-Adds Hi10|Hi10p into a match. Prefers this over some erroneous matches.
-
-```bash
-/(10.?bit|hi10p)/i
-```
-
----
-
-Add this to your Preferred with a score of **[1]**
-
-Adds version due to anime groups sometimes fixing issues with their releases.
-
-```bash
-/\d(v2)\b/i
-```
-
----
-
-Add this to your Preferred with a score of **[2]**
-
-```bash
-/\d(v3)\b/i
-```
-
----
-
-Add this to your Preferred with a score of **[3]**
-
-```bash
-/\d(v4)\b/i
-```
-
----
+#### Low Quality Releases
 
 !!! note
 
@@ -599,6 +519,8 @@ Sub-Par Releases 2nd Tier (Re-encoded to crap or really small filesizes) (Sepera
 /(\[Davinci\]|-Davinci\b)/i
 ```
 
+---
+
 ??? tip "If you would like the above to be in DO NOT WANT in an easy format here it is."
 
     ```bash
@@ -619,6 +541,83 @@ Sub-Par Releases 2nd Tier (Re-encoded to crap or really small filesizes) (Sepera
 
     When done it should look something like this:
     ![!rpa-release-profile-2](images/rpa-release-profile-2.png)
+
+---
+
+#### Optional Preferred
+
+!!! note
+
+    These are extra parameters that can help and are not needed but are nice to have. They are set low mainly to supercede themselves and not interfere with other releases.
+
+Add this to your Preferred with a score of **[1]**
+
+Adds Hi10|Hi10p into a match. Prefers this over some erroneous matches.
+
+```bash
+/(10.?bit|hi10p)/i
+```
+
+---
+
+Add this to your Preferred with a score of **[1]**
+
+Adds version due to anime groups sometimes fixing issues with their releases.
+
+```bash
+/\d(v2)\b/i
+```
+
+---
+
+Add this to your Preferred with a score of **[2]**
+
+```bash
+/\d(v3)\b/i
+```
+
+---
+
+Add this to your Preferred with a score of **[3]**
+
+```bash
+/\d(v4)\b/i
+```
+
+---
+
+Add this to your Preferred with a score of **[100]**
+
+!!! note
+    We are adding this as **100** so that any unknown `Blu-Ray` can jump tiers inside the Subs categories but not interfere with any tiers above.
+
+```bash
+/\b(?:(BluRay|Blu-Ray|BDMux|BD(?!$))|(BDRip)|(BRRip))(?:\b|$|[ .])/ix
+```
+
+---
+
+Add this to your Preferred with a score of **[15]**
+
+```bash
+/\b(WEB[-_. ]DL|WEBDL|WebHD|[. ]WEB[. ](?:[xh]26[45]|DDP?5[. ]1)|[. ](?-i:WEB)$|\d+0p(?:WEB-DLMux|\b\s\/\sWEB\s\/\s\b))/ix
+```
+
+---
+
+Add this to your Preferred with a score of **[10]**
+
+```bash
+/(WebRip|Web-Rip|WEBMux)/ix
+```
+
+---
+
+Add this to your Preferred with a score of **[5]**
+
+```bash
+/\b(?:(1080p|1920x1080|1440p|FHD|1080i|4kto1080p))\b/i
+```
 
 ---
 
