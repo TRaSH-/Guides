@@ -1,13 +1,29 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: daily
+      interval: "daily"
+    rebase-strategy: "auto"
+    target-branch: "dev"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: "GH updates"
+      prefix-development: "GH dev"
+      include: "scope"
 
-  - package-ecosystem: pip
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: daily
+      interval: "daily"
+    rebase-strategy: "auto"
+    target-branch: "dev"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: "pip-update"
+      prefix-development: "pip dev"
+      include: "scope"
