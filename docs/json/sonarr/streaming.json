@@ -1,0 +1,48 @@
+{
+  "name": "Release Sources (Streaming Service)",
+  "_trash_id": "a0e7774a471e041d4f1111e0690244d0",
+  "mustContain": [],
+  "mustNotContain": [],
+  "includePreferredWhenRenaming": true,
+  "note": "!!! note\n    Also check mark `Include Preferred when Renaming` and add `{Preferred Words}` to your renaming scheme when you get download loop issues!!!\n    \n    What it does:\n    \n    When enabled the block with the [Release Source (Streaming Service)](#release-source-streaming-service) in it are then added to the file name which fixes any loops due to Sonarr seeing a new NF rip when an AMZN rip is found.\n    Probably doesn’t happen if cutoff is met, but for anything that is unmet or any forced searches it results in a loop because NF is not in Sonarr’s copy so it upgrades, and loops.\n    \n    Enabling the include in preferred words for AMZN and adding that to the file name fixes that.\n    \n    Example of a naming scheme for series can be found [HERE](/Sonarr/Sonarr-recommended-naming-scheme/){:target=\"_blank\" rel=\"noopener noreferrer\"}",
+  "preferred": [
+    {
+      "score": 100,
+      "terms": [
+        "/\\b(amzn|amazon)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(atvp|aptv)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(hmax)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 95,
+      "terms": [
+        "/\\b(sho)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 90,
+      "terms": [
+        "/\\b(dsnp|dsny|disney)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(nf|netflix)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(qibi)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 85,
+      "terms": [
+        "/\\b(hulu)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(pcok)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 75,
+      "terms": [
+        "/\\b(dcu)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(hbo)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(red)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(it)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    }
+  ]
+}

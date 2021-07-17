@@ -77,88 +77,10 @@ The Number between the **[**brackets**]** are the scores the release name will g
 
 ## First Release Profile
 
-<!-- [trash_id: a0e7774a471e041d4f1111e0690244d0] -->
 !!! important
     We're going to make use of 2 separate release profiles.
 
-### Release Sources (Streaming Service)
-
-!!! note
-
-    Also check mark `Include Preferred when Renaming` and add `{Preferred Words}` to your renaming scheme when you get download loop issues!!!
-
-    What it does:
-
-    When enabled the block with the [Release Source (Streaming Service)](#release-source-streaming-service) in it are then added to the file name which fixes any loops due to Sonarr seeing a new NF rip when an AMZN rip is found.
-    Probably doesn’t happen if cutoff is met, but for anything that is unmet or any forced searches it results in a loop because NF is not in Sonarr’s copy so it upgrades, and loops.
-
-    Enabling the include in preferred words for AMZN and adding that to the file name fixes that.
-
-    Example of a naming scheme for series:
-
-    Can be found [HERE](/Sonarr/Sonarr-recommended-naming-scheme/){:target="_blank" rel="noopener noreferrer"}
-
-Add this to your `Preferred (3)` with a score of [100]
-
-```bash
-/\b(amzn|amazon)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(atvp|aptv)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(hmax)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-Add this to your `Preferred (3)` with a score of [95]
-
-```bash
-/\b(sho)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-Add this to your `Preferred (3)` with a score of [90]
-
-```bash
-/\b(dsnp|dsny|disney)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(nf|netflix)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(qibi)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-Add this to your `Preferred (3)` with a score of [85]
-
-```bash
-/\b(hulu)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(pcok)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-Add this to your `Preferred (3)` with a score of [75]
-
-```bash
-/\b(dcu)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(hbo)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(red)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
-
-```bash
-/\b(it)\b(?=[ ._-]web[ ._-]?(dl|rip)\b)/i
-```
+--8<-- "docs/Sonarr/generated/streaming.mdt"
 
 ??? success "example"
 
@@ -176,17 +98,7 @@ Add this to your `Preferred (3)` with a score of [75]
 
 ## Second Release Profile
 
-<!-- [trash_id: 37cf8cdd57c8fb4a8b68f36e00e40de2] -->
-!!! warning
-    DO NOT Check mark `Include Preferred when Renaming`
-
-### Golden rule
-
-Add this to your `Must not contain (2)`
-
-```bash
-/(?=(1080|720)).*((x|h)[ ._-]?265|hevc)/i
-```
+--8<-- "docs/Sonarr/generated/golden-rule.mdt"
 
 ??? success "example"
 
@@ -224,78 +136,7 @@ Add this to your `Must not contain (2)`
 
 ------
 
-### P2P Groups + Repack/Proper
-
-Add this to your `Preferred (3)` with a score of [180]
-The reason why this one get's such a high score is because it's the only quality scene group that exist (till now) and scene groups don't add the [Release Sources (Streaming Service)](#release-sources-streaming-service) to their release name so they don't get the extra point of the release source regex.
-
-```bash
-/(-deflate|-inflate)\b/i
-```
-
-Add this to your `Preferred (3)` with a score of [150]
-
-```bash
-/(-AJP69|-BTN|-CasStudio|-CtrlHD|-KiNGS)\b/i
-```
-
-```bash
-/(-monkee|-NTb|-NTG|-QOQ|-RTN)\b/i
-```
-
-```bash
-/(-TOMMY|-ViSUM|-T6D)\b/i
-```
-
-Add this to your `Preferred (3)` with a score of [125]
-
-```bash
-/(-BTW|-Chotab|-CiT|-DEEP|-iJP|-iT00NZ)\b/i
-```
-
-```bash
-/(-LAZY|-NYH|-SA89|-SIGMA|-TEPES|-TVSmash)\b/i
-```
-
-```bash
-/(-SDCC|-iKA|-iJP|-Cinefeel|-SPiRiT|-FC)\b/i
-```
-
-```bash
-/(-JETIX|-Coo7|-WELP|-KiMCHI|-BLUTONiUM)\b/i
-```
-
-```bash
-/(-orbitron|-ETHiCS|-RTFM|-PSiG|-MZABI)\b/i
-```
-
-```bash
-/(-ROCCaT|3cTWeB|playWEB)\b/i
-```
-
-Add this to your `Preferred (3)` with a score of [100]
-
-```bash
-/(-ViSiON|-FLUX)\b/i
-```
-
-Add this to your `Preferred (3)` with a score of [12]
-
-```bash
-/(repack3)/i
-```
-
-Add this to your `Preferred (3)` with a score of [11]
-
-```bash
-/(repack2)/i
-```
-
-Add this to your `Preferred (3)` with a score of [10]
-
-```bash
-/\b(repack|proper)\b/i
-```
+--8<-- "docs/Sonarr/generated/p2p.mdt"
 
 ??? success "example"
 
@@ -311,17 +152,7 @@ Add this to your `Preferred (3)` with a score of [10]
 
 ------
 
-### Low Quality Groups
-
-Add this to your `Preferred (3)` with a score of [-100]
-
-```bash
-/(TBS|-BRiNK|-CHX|-XLF|-worldmkv|-GHOSTS)\b/i
-```
-
-```bash
-/(-VIDEOHOLE|nhanc3)\b/i
-```
+--8<-- "docs/Sonarr/generated/low-quality.mdt"
 
 ??? success "example"
 

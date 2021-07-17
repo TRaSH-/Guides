@@ -1,0 +1,49 @@
+{
+  "name": "This is just a test file",
+  "includePreferredWhenRenaming": true,
+  "mustContain": [
+    "EN",
+    "FR"
+  ],
+  "mustNotContain": [
+    "ES",
+    "GE"
+  ],
+  "preferred": [
+    {
+      "score": 100,
+      "terms": [
+        "/\\b(amzn|amazon)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i",
+        "/\\b(atvp|aptv)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 95,
+      "terms": [
+        "/\\b(sho)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    },
+    {
+      "score": 90,
+      "terms": [
+        "/\\b(dsnp|dsny|disney)\\b(?=[ ._-]web[ ._-]?(dl|rip)\\b)/i"
+      ]
+    }
+  ],
+  "optional": {
+    "mustContain": [
+      "EN"
+    ],
+    "mustNotContain": [
+      "ES"
+    ],
+    "preferred": [
+      {
+        "score": -1000,
+        "terms": [
+          "/English/i"
+        ]
+      }
+    ]
+  }
+}

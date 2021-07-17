@@ -2,3 +2,8 @@ venv/
 mkdocs-dev-server.bat
 /docs/Notifiarr/preview.bat
 /docs/Notifiarr/Integrations/_TEMPLATE.md
+__pycache__
+/site
+generated
+.DS_*
+._*

@@ -10,3 +10,4 @@ mkdocs-redirects==1.0.3
 mkdocs==1.2.1
 pygments==2.9.0
 pymdown-extensions==8.2
+mkdocs-simple-hooks==0.1.3

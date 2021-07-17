@@ -1,0 +1,16 @@
+{
+  "name": "Low Quality Groups",
+  "_trash_id": "",
+  "includePreferredWhenRenaming": true,
+  "mustContain": [],
+  "mustNotContain": [],
+  "preferred": [
+    {
+      "score": -100,
+      "terms": [
+        "/(TBS|-BRiNK|-CHX|-XLF|-worldmkv|-GHOSTS)\\b/i",
+        "/(-VIDEOHOLE|nhanc3)\\b/i"
+      ]
+    }
+  ]
+}

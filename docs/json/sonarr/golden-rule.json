@@ -1,0 +1,11 @@
+{
+  "name": "Golden rule",
+  "_trash_id": "37cf8cdd57c8fb4a8b68f36e00e40de2",
+  "mustContain": [],
+  "mustNotContain": [
+    "/(?=(1080|720)).*((x|h)[ ._-]?265|hevc)/i"
+  ],
+  "includePreferredWhenRenaming": false,
+  "preferred": [],
+  "note": "!!! warning\n    DO NOT Check mark `Include Preferred when Renaming`"
+}

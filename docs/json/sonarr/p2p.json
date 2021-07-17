@@ -1,0 +1,59 @@
+{
+  "name": "P2P Groups + Repack/Proper",
+  "_trash_id": "",
+  "mustContain": [],
+  "mustNotContain": [],
+  "includePreferredWhenRenaming": true,
+  "preferred": [
+    {
+      "score": 180,
+      "note": "The reason why this one get's such a high score is because it's the only quality scene group that exist (till now) and scene groups don't add the [Release Sources (Streaming Service)](#release-sources-streaming-service) to their release name so they don't get the extra point of the release source regex.",
+      "terms": [
+        "/(-deflate|-inflate)\\b/i"
+      ]
+    },
+    {
+      "score": 150,
+      "terms": [
+        "/(-AJP69|-BTN|-CasStudio|-CtrlHD|-KiNGS)\\b/i",
+        "/(-monkee|-NTb|-NTG|-QOQ|-RTN)\\b/i",
+        "/(-TOMMY|-ViSUM|-T6D)\\b/i"
+      ]
+    },
+    {
+      "score": 125,
+      "terms": [
+        "/(-BTW|-Chotab|-CiT|-DEEP|-iJP|-iT00NZ)\\b/i",
+        "/(-LAZY|-NYH|-SA89|-SIGMA|-TEPES|-TVSmash)\\b/i",
+        "/(-SDCC|-iKA|-iJP|-Cinefeel|-SPiRiT|-FC)\\b/i",
+        "/(-JETIX|-Coo7|-WELP|-KiMCHI|-BLUTONiUM)\\b/i",
+        "/(-orbitron|-ETHiCS|-RTFM|-PSiG|-MZABI)\\b/i",
+        "/(-ROCCaT)\\b/i"
+      ]
+    },
+    {
+      "score": 100,
+      "terms": [
+        "/(-ViSiON|-FLUX)\\b/i"
+      ]
+    },
+    {
+      "score": 12,
+      "terms": [
+        "/(repack3)/i"
+      ]
+    },
+    {
+      "score": 11,
+      "terms": [
+        "/(repack2)/i"
+      ]
+    },
+    {
+      "score": 10,
+      "terms": [
+        "/\\b(repack|proper)\\b/i"
+      ]
+    }
+  ]
+}
