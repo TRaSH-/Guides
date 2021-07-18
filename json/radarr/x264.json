@@ -1,0 +1,24 @@
+{
+  "trash_id": "2899d84dc9372de3408e6d8cc18e9666",
+  "name": "x264",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+          "name": "x264",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "[xh][ .]?264|\\bAVC(\\b|\\d)"
+          }
+      },
+      {
+          "name": "Remux",
+          "implementation": "QualityModifierSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": 5
+          }
+      }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "trash_id": "eecf3a857724171f968a66cb5719e152",
+  "trash_score": "190",
+  "name": "IMAX",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [
+    {
+      "name": "IMAX",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bIMAX\\b"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "trash_id": "eca37840c13c6ef2dd0262b141a5482f",
+  "trash_score": "190",
+  "name": "4K Remaster",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [{
+          "name": "Remaster",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "Remaster"
+          }
+      },
+      {
+          "name": "4K",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "4k"
+          }
+      },
+      {
+          "name": "Not 4K Resolution",
+          "implementation": "ResolutionSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": 2160
+          }
+      }
+  ]
+}

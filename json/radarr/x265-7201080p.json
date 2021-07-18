@@ -1,0 +1,44 @@
+{
+  "trash_id": "dc98083864ea246d05a42df0d05f81cc",
+  "trash_score": "-9999",
+  "name": "x265 (720/1080p)",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 720
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 1080
+      }
+    },
+    {
+      "name": "x265/HEVC",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "[xh][ .]?265|\\bHEVC(\\b|\\d)"
+      }
+    },
+    {
+      "name": "Quality Group Exceptions",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "-MZABI|-NCmt\\b"
+      }
+    }
+  ]
+}

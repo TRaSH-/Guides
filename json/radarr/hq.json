@@ -1,0 +1,71 @@
+{
+  "trash_id": "1c7d7b04b15cc53ea61204bebbcc1ee2",
+  "trash_score": "100",
+  "name": "HQ",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "[BLOCK1]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-BMF|-decibeL|\\bD-Z0N3\\b|\\bFTW-HD\\b|-HiFi|-NCmt|-OISTiLe|-TDD|\\bZQ\\b"
+      }
+    },
+    {
+      "name": "[BLOCK2]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-HiSD|-NTb|-ift|-geek|-tnp|-ncmt|-pter|-bbq"
+      }
+    },
+    {
+      "name": "[BLOCK3]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-CRiSC|-CtrlHD|-DON|\\b-EA\\b|-EbP|-LolHD|-SbR|-TayTo|-VietHD"
+      }
+    },
+    {
+      "name": "[BLOCK4]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bBHDStudio\\b"
+      }
+    },
+    {
+      "name": "[Remux Groups]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-FraMeSToR|-EPSiLON|\\bKRaLiMaRKo\\b|-PmP|-BLURANiUM|-SiCFoI|-SURFINBIRD"
+      }
+    },
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    }
+  ]
+}

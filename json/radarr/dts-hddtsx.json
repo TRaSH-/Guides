@@ -1,0 +1,14 @@
+{
+  "trash_id": "4eb3c272d48db8ab43c2c85283b69744",
+  "name": "DTS-HD/DTS:X",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "dts.?(hd|es|x(?!\\d))",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+          "value": "dts.?(hd|es|x(?!\\d))"
+      }
+  }]
+}

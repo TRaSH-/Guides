@@ -1,0 +1,14 @@
+{
+  "trash_id": "6ba9033150e7896bdc9ec4b44f2b230f",
+  "name": "MP3",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "MP3",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+          "value": "mp3"
+      }
+  }]
+}

@@ -1,0 +1,51 @@
+{
+  "trash_id": "373b58bd188fc00c817bd8c7470ea285",
+  "name": "4.0 Sound",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+          "name": "4.0ch",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "[^0-9]4\\.0"
+          }
+      },
+      {
+          "name": "Not Mono",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "[^0-9]1\\.0|\\bMono\\b|\\[PCM \\]"
+          }
+      },
+      {
+          "name": "Not Stereo",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "(?<!repac)[^0-9]2\\.0|\\bStereo\\b"
+          }
+      },
+      {
+          "name": "Not 3.0ch",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "[^0-9]3\\.0"
+          }
+      },
+      {
+          "name": "Not High Channel Count",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "[^0-9][5-9]\\.[0-1]"
+          }
+      }
+  ]
+}

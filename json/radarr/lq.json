@@ -1,0 +1,53 @@
+{
+  "trash_id": "90a6f9a284dff5103f6346090e6280c8",
+  "trash_score": "-9999",
+  "name": "LQ",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "[BLOCK1]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-aXXo|-CrEwSaDe|-DEViSE|-FaNGDiNG0|-FLAWL3SS|-FZHD|-FRDS|-HDTime|-IMAGINE|-iPlanet|-KingBen|-KiNGDOM|-KLAXXON|-Leffe|-LTRG|-mHD|-mSD|-NhaNc3|-nHD|-nikt0|-nSD|-PrisM|-PRODJi|-Rx|-RDN|-SANTi|-ViSION|-WAF|-WHiiZz|-x0r|\\bYIFY\\b|\\bYTS\\b|-STUTTERSHIT"
+      }
+    },
+    {
+      "name": "[BLOCK2]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-CDDHD|-EuReKA|-DDR|-DNL|-BARC0DE"
+      }
+    },
+    {
+      "name": "[BLOCK3]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bRARBG\\b|\\bFGT\\b|-BReWeRS|-Grym|-LiGaS|-Zeus|-Tigole"
+      }
+    },
+    {
+      "name": "[BLOCK4]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "-beAst|\\bCHD\\b|-HDWinG|\\bMTeam\\b|-MySiLU|-WiKi"
+      }
+    },
+    {
+      "name": "[BLOCK5]",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bRifftrax\\b|\\bRU4HD\\b"
+      }
+    }
+  ]
+}

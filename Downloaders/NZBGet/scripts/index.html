@@ -1,0 +1,2090 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guides mainly for Sonarr/Radarr/Bazarr and everything related to it.">
+      
+      
+      
+        <meta name="author" content="TRaSH">
+      
+      
+        <link rel="canonical" href="https://trash-guides.info/Downloaders/NZBGet/scripts/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>NzbGet Scripts - TRaSH Guides</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="../../../css/lightgallery.min.css">
+
+    
+    
+    <script src="../../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700%7CEncode+Sans+Expanded&display=fallback">
+        <style>:root{--md-text-font-family:"Noto Sans";--md-code-font-family:"Encode Sans Expanded"}</style>
+      
+    
+    
+      <link rel="manifest" href="../../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-ZZKM4MPQXL"),document.addEventListener("DOMContentLoaded",function(){"undefined"!=typeof location$&&location$.subscribe(function(t){gtag("config","G-ZZKM4MPQXL",{page_path:t.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZKM4MPQXL"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigio" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nzbget-scripts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TRaSH Guides" class="md-header__button md-logo" aria-label="TRaSH Guides" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TRaSH Guides
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NzbGet Scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigio" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/TRaSH-/Guides/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TRaSH-/Guides
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Radarr/" class="md-tabs__link">
+        Radarr
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Sonarr/" class="md-tabs__link">
+        Sonarr
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Bazarr/" class="md-tabs__link">
+        Bazarr
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Downloaders
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Notifiarr/Quick-Start/" class="md-tabs__link">
+        Notifiarr
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Plex/" class="md-tabs__link">
+        Plex
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Hardlinks/Hardlinks-and-Instant-Moves/" class="md-tabs__link">
+        Hardlinks
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TRaSH Guides" class="md-nav__button md-logo" aria-label="TRaSH Guides" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    TRaSH Guides
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/TRaSH-/Guides/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TRaSH-/Guides
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Radarr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Radarr" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Radarr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-Quality-Settings-File-Size/" class="md-nav__link">
+        Quality Settings (File Size)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-recommended-naming-scheme/" class="md-nav__link">
+        Recommended naming scheme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-import-custom-formats/" class="md-nav__link">
+        How to import Custom Formats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-setup-custom-formats/" class="md-nav__link">
+        How to setup Custom Formats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-collection-of-custom-formats/" class="md-nav__link">
+        Collection of Custom Formats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Radarr-remote-path-mapping/" class="md-nav__link">
+        Remote Path Mappings explained
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        Tips
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Tips/Radarr-add-a-movie-collection/" class="md-nav__link">
+        How to add a Movie Collection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Tips/Radarr-rename-your-folders/" class="md-nav__link">
+        How to rename your folders
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Radarr/Tips/Radarr-show-unknown-movie-items/" class="md-nav__link">
+        Show Unknown Movie Items
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Sonarr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sonarr" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sonarr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/Sonarr-Quality-Settings-File-Size/" class="md-nav__link">
+        Quality Settings (File Size)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/Sonarr-recommended-naming-scheme/" class="md-nav__link">
+        Recommended naming scheme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/Sonarr-Release-Profile-RegEx/" class="md-nav__link">
+        Release Profile RegEx (WEB-DL)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/Sonarr-Release-Profile-RegEx-Anime/" class="md-nav__link">
+        Release Profile RegEx (Anime)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sonarr/Sonarr-remote-path-mapping/" class="md-nav__link">
+        Remote Path Mappings explained
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Bazarr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bazarr" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Bazarr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bazarr/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bazarr/Setup-Guide/" class="md-nav__link">
+        Basic-Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bazarr/After-install-configuration/" class="md-nav__link">
+        After Install Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Bazarr/scripts/" class="md-nav__link">
+        Scripts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Downloaders
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Downloaders" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Downloaders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        NZBGet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="NZBGet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          NZBGet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basic-Setup/" class="md-nav__link">
+        Basic-Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paths-and-Categories/" class="md-nav__link">
+        Path and Categories
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Downloaders/NZBGet/scripts/" class="md-nav__link">
+        Scripts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      <label class="md-nav__link" for="__nav_5_3">
+        SABnzbd
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SABnzbd" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          SABnzbd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SABnzbd/Basic-Setup/" class="md-nav__link">
+        Basic-Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SABnzbd/Paths-and-Categories/" class="md-nav__link">
+        Path and Categories
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      <label class="md-nav__link" for="__nav_5_4">
+        qBittorrent
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="qBittorrent" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          qBittorrent
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qBittorrent/Basic-Setup/" class="md-nav__link">
+        Basic-Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qBittorrent/Paths/" class="md-nav__link">
+        Paths
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qBittorrent/How-to-add-categories/" class="md-nav__link">
+        How to add Categories
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qBittorrent/Port-forwarding/" class="md-nav__link">
+        Port forwarding
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      <label class="md-nav__link" for="__nav_5_5">
+        Deluge
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Deluge" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Deluge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deluge/" class="md-nav__link">
+        Deluge Placeholder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deluge/Deluge-Basic-Setup/" class="md-nav__link">
+        Deluge - Basic Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deluge/Deluge-how-to-add-labels/" class="md-nav__link">
+        Deluge - How to add labels
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      <label class="md-nav__link" for="__nav_5_6">
+        ruTorrent
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ruTorrent" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          ruTorrent
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ruTorrent/" class="md-nav__link">
+        ruTorrent Placeholder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ruTorrent/ruTorrent-Basic-Setup/" class="md-nav__link">
+        ruTorrent - Basic Setup
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Notifiarr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Notifiarr" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Notifiarr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notifiarr/Quick-Start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Plex
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Plex" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Plex
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Plex/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Plex/profiles/" class="md-nav__link">
+        Profiles
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Misc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/how-to-provide-a-docker-compose/" class="md-nav__link">
+        How to provide a docker compose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/How-to-setup-Torguard-for-port-forwarding/" class="md-nav__link">
+        Setup TorGuard for port forwarding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/x265-4k/" class="md-nav__link">
+        x265-4k and Golden Rule
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Hardlinks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hardlinks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Hardlinks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/Hardlinks-and-Instant-Moves/" class="md-nav__link">
+        Hardlinks - Atomic Moves
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      <label class="md-nav__link" for="__nav_9_2">
+        How to setup for
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to setup for" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          How to setup for
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/" class="md-nav__link">
+        How to setup for
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/Dockstarter/" class="md-nav__link">
+        Dockstarter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/Native/" class="md-nav__link">
+        Native
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/Synology/" class="md-nav__link">
+        Synology
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/How-to-setup-for/Unraid/" class="md-nav__link">
+        Unraid
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/Examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardlinks/Check-if-hardlinks-are-working/" class="md-nav__link">
+        Check if hardlinks are working
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clean" class="md-nav__link">
+    Clean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashrenamer" class="md-nav__link">
+    HashRenamer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wtfnzb-renamer" class="md-nav__link">
+    WtFnZb-Renamer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+    
+                
+                  <a href="https://github.com/TRaSH-/Guides/edit/master/docs/Downloaders/NZBGet/scripts/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="nzbget-scripts">NzbGet Scripts<a class="headerlink" href="#nzbget-scripts" title="Permanent link">¶</a></h1>
+<h2 id="clean">Clean<a class="headerlink" href="#clean" title="Permanent link">¶</a></h2>
+<details class="info"><summary>Clean NZB name</summary><ul>
+<li>Title: <code>Clean.py</code></li>
+<li>Author(s): ???</li>
+</ul>
+<p>Removes the following suffixes from NZB name:
+NZBgeek / Obfuscated / BUYMORE / Scrambled /etc...
+Cleans the NZB name by removing the retagged stuff (-Obfuscated, -postbox, etc).</p>
+</details>
+<details class="example"><summary>Script</summary><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">#</span>
+
+<span class="c1">##############################################################################</span>
+<span class="c1">### NZBGET SCAN SCRIPT                                                     ###</span>
+
+<span class="c1"># Clean NZB name.</span>
+<span class="c1">#</span>
+<span class="c1"># Removes the following suffixes from NZB name:</span>
+<span class="c1"># NZBgeek / Obfuscated / BUYMORE / Scrambled.</span>
+<span class="c1">#</span>
+<span class="c1"># NOTE: This script requires Python to be installed on your system.</span>
+
+<span class="c1">### NZBGET SCAN SCRIPT                                                     ###</span>
+<span class="c1">##############################################################################</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="c1"># Exit codes used by NZBGet</span>
+<span class="n">POSTPROCESS_SUCCESS</span><span class="o">=</span><span class="mi">93</span>
+<span class="n">POSTPROCESS_ERROR</span><span class="o">=</span><span class="mi">94</span>
+<span class="n">POSTPROCESS_SKIP</span><span class="o">=</span><span class="mi">95</span>
+
+<span class="c1"># Check if the script is called from NZBGet 13.0 or later</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;NZBOP_SCRIPTDIR&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** NZBGet post-processing script ***&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This script is supposed to be called from NZBGet (13.0 or later).&#39;</span><span class="p">)</span>
+  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;NZBNP_NZBNAME&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[WARN] Filename not found in environment&#39;</span><span class="p">)</span>
+  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBNP_NZBNAME&#39;</span><span class="p">]</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-4P\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-4Planet\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-AsRequested\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-AsRequested-xpost\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-BUYMORE\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-Chamele0n\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-GEROV\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-iNC0GNiTO\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-NZBGeek\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-Obfuscated\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-postbot\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-Rakuv\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-Scrambled\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-WhiteRev\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-xpost\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)\[eztv\]\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)\[TGx\]\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)\[TGx\]-xpost\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)\[ettv\]\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-WRTEAM\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="n">fwp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;(?i)-CAPTCHA\.nzb$&#39;</span><span class="p">,</span> <span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">fwp</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[NZB] NZBNAME=&#39;</span><span class="p">,</span> <span class="n">fwp</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_SUCCESS</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="hashrenamer">HashRenamer<a class="headerlink" href="#hashrenamer" title="Permanent link">¶</a></h2>
+<details class="info"><summary>Renames hashed media files to match the source NZB</summary><ul>
+<li>Title: <code>HashRenamer.py</code></li>
+<li>Author(s): l3uddz</li>
+<li>URL: <a href="https://github.com/cloudbox/cloudbox" rel="noopener noreferrer" target="_blank">github.com/cloudbox/cloudbox</a></li>
+</ul>
+<p>Part of the Cloudbox project: <a href="https://cloudbox.works">https://cloudbox.works</a>
+Built on top of the NZBGet scripts template created by <a href="https://github.com/clinton-hall" rel="noopener noreferrer" target="_blank">Clinton Hall</a>.
+Released under GNU General Public License v2.0</p>
+</details>
+<details class="example"><summary>Script</summary><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">#</span>
+<span class="c1">##############################################################################</span>
+<span class="c1"># Title:         HashRenamer.py                                              #</span>
+<span class="c1"># Author(s):     l3uddz, desimaniac                                          #</span>
+<span class="c1"># URL:           https://github.com/l3uddz/nzbgetScripts                     #</span>
+<span class="c1"># Description:   Renames hashed media files to match the source NZB.         #</span>
+<span class="c1"># --                                                                         #</span>
+<span class="c1">#            Part of the Cloudbox project: https://cloudbox.works            #</span>
+<span class="c1">##############################################################################</span>
+
+<span class="c1">##############################################################################</span>
+<span class="c1">#  Built on top of the NZBGet scripts template created by Clinton Hall       #</span>
+<span class="c1">#    (https://github.com/clinton-hall).                                      #</span>
+<span class="c1">#  Released under GNU General Public License v2.0                            #</span>
+<span class="c1">##############################################################################</span>
+
+
+<span class="c1">##############################################################################</span>
+<span class="c1">### NZBGET POST-PROCESSING SCRIPT                                          ###</span>
+
+<span class="c1"># Rename files with hashes for file name</span>
+<span class="c1">#</span>
+<span class="c1"># NOTE: This script requires Python to be installed on your system.</span>
+<span class="c1">#</span>
+<span class="c1">##############################################################################</span>
+<span class="c1">### NZBGET POST-PROCESSING SCRIPT                                          ###</span>
+<span class="c1">##############################################################################</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># NZBGet Exit Codes</span>
+<span class="n">NZBGET_POSTPROCESS_PARCHECK</span> <span class="o">=</span> <span class="mi">92</span>
+<span class="n">NZBGET_POSTPROCESS_SUCCESS</span> <span class="o">=</span> <span class="mi">93</span>
+<span class="n">NZBGET_POSTPROCESS_ERROR</span> <span class="o">=</span> <span class="mi">94</span>
+<span class="n">NZBGET_POSTPROCESS_NONE</span> <span class="o">=</span> <span class="mi">95</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># EXTENSION STUFF</span>
+<span class="c1">############################################################</span>
+
+<span class="k">def</span> <span class="nf">do_check</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s1">&#39;NZBOP_SCRIPTDIR&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This script can only be called from NZBGet (11.0 or later).&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBOP_VERSION&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;11.0&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] NZBGet Version </span><span class="si">%s</span><span class="s2"> is not supported. Please update NZBGet.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBOP_VERSION&#39;</span><span class="p">])))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Script triggered from NZBGet Version </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBOP_VERSION&#39;</span><span class="p">])))</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="s1">&#39;NZBPP_TOTALSTATUS&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_TOTALSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Download failed with status </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_STATUS&#39;</span><span class="p">]))</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Check par status</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_PARSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_PARSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Par-repair failed, setting status </span><span class="se">\&quot;</span><span class="s2">failed</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># Check unpack status</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_UNPACKSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Unpack failed, setting status </span><span class="se">\&quot;</span><span class="s2">failed</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_UNPACKSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_PARSTATUS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="c1"># Unpack was skipped due to nzb-file properties or due to errors during par-check</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_HEALTH&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Download health is compromised and Par-check/repair disabled or no .par2 files found. &quot;</span> \
+                      <span class="s2">&quot;Setting status </span><span class="se">\&quot;</span><span class="s2">failed</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Please check your Par-check/repair settings for future downloads.&quot;</span><span class="p">)</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Par-check/repair disabled or no .par2 files found, and Unpack not required. Health is &quot;</span> \
+                      <span class="s2">&quot;ok so handle as though download successful.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[WARNING] Please check your Par-check/repair settings for future downloads.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check if destination directory exists (important for reprocessing of history items)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_DIRECTORY&#39;</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Nothing to post-process: destination directory&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span>
+            <span class="s1">&#39;NZBPP_DIRECTORY&#39;</span><span class="p">],</span> <span class="s2">&quot;doesn&#39;t exist. Setting status </span><span class="se">\&quot;</span><span class="s2">failed</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># All checks done, now launching the script.</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">NZBGET_POSTPROCESS_NONE</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">extensions</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\.([^.]+)&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">extensions</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ext</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">,</span> <span class="n">ext</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">is_file_hash</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="n">hash_regexp</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">r</span><span class="s1">&#39;^[a-fA-F0-9]</span><span class="si">{40}</span><span class="s1">$&#39;</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s1">&#39;^[a-fA-F0-9]</span><span class="si">{32}</span><span class="s1">$&#39;</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s1">&#39;^[a-f0-9]</span><span class="si">{128}</span><span class="s1">$&#39;</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]</span><span class="si">{42}</span><span class="s1">$&#39;</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="nb">hash</span> <span class="ow">in</span> <span class="n">hash_regexp</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">find_files</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">file_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start_count</span> <span class="o">=</span> <span class="n">folder</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">subdirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">topdown</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">depth</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">-</span> <span class="n">start_count</span> <span class="o">&gt;=</span> <span class="n">depth</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">subdirs</span><span class="p">[:]</span>
+                <span class="k">continue</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">extension</span><span class="p">:</span>
+                <span class="n">file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">extension</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                    <span class="n">file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># MAIN</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># do checks</span>
+<span class="n">do_check</span><span class="p">()</span>
+
+<span class="c1"># retrieve required variables</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_DIRECTORY&#39;</span><span class="p">])</span>
+<span class="n">nzb_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NZBPP_NZBFILENAME&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">nzb_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Unable to retrieve NZBPP_NZBFILENAME&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">NZBGET_POSTPROCESS_ERROR</span><span class="p">)</span>
+<span class="n">nzb_name</span> <span class="o">=</span> <span class="n">nzb_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nzb&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] Using </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> for hashed filenames&quot;</span> <span class="o">%</span> <span class="n">nzb_name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] Scanning </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> for hashed filenames&quot;</span> <span class="o">%</span> <span class="n">directory</span><span class="p">))</span>
+
+<span class="c1"># scan for files</span>
+<span class="n">found_files</span> <span class="o">=</span> <span class="n">find_files</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">found_files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] No files were found in </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">directory</span><span class="p">))</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">NZBGET_POSTPROCESS_NONE</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] Found </span><span class="si">%d</span><span class="s2"> files to check for hashed filenames&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">found_files</span><span class="p">)))</span>
+    <span class="c1"># loop files checking for file hash</span>
+    <span class="n">moved_files</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">found_file_path</span> <span class="ow">in</span> <span class="n">found_files</span><span class="p">:</span>
+        <span class="c1"># set variable</span>
+        <span class="n">dir_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">found_file_path</span><span class="p">)</span>
+        <span class="n">file_name</span><span class="p">,</span> <span class="n">file_ext</span> <span class="o">=</span> <span class="n">get_file_name</span><span class="p">(</span><span class="n">found_file_path</span><span class="p">)</span>
+
+        <span class="c1"># is this a file hash</span>
+        <span class="k">if</span> <span class="n">is_file_hash</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+            <span class="n">new_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nzb_name</span><span class="p">,</span> <span class="n">file_ext</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] Moving </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> to </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">found_file_path</span><span class="p">,</span> <span class="n">new_file_path</span><span class="p">)))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">found_file_path</span><span class="p">,</span> <span class="n">new_file_path</span><span class="p">)</span>
+                <span class="n">moved_files</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[ERROR] Failed moving </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> to </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">found_file_path</span><span class="p">,</span> <span class="n">new_file_path</span><span class="p">)))</span>
+
+    <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;[INFO] Finished processing </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, moved </span><span class="si">%d</span><span class="s2"> files&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">moved_files</span><span class="p">)))</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">NZBGET_POSTPROCESS_SUCCESS</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="wtfnzb-renamer">WtFnZb-Renamer<a class="headerlink" href="#wtfnzb-renamer" title="Permanent link">¶</a></h2>
+<details class="info"><summary>Renames hashed media files to match the source NZB</summary><ul>
+<li>Title: <code>WtFnZb-Renamer.py</code></li>
+<li>Author(s): WtFnZb</li>
+<li>URL: ??</li>
+</ul>
+<p>NZBGET SCAN SCRIPT</p>
+<p>Extract filenames from subjects containing [PRiVATE]-[WtFnZb]</p>
+<p>This extensions extracts obfuscated filenames from .nzb files</p>
+</details>
+<details class="example"><summary>Script</summary><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">### NZBGET SCAN SCRIPT</span>
+
+<span class="c1"># Extract filenames from subjects containing [PRiVATE]-[WtFnZb]</span>
+<span class="c1">#</span>
+<span class="c1"># This extensions extracts obfuscated filenames from .nzb files</span>
+<span class="c1"># created by WtFnZb.</span>
+<span class="c1">#</span>
+<span class="c1"># Supported subject formats:</span>
+<span class="c1">#</span>
+<span class="c1"># - [PRiVATE]-[WtFnZb]-[filename]-[1/5] - &quot;&quot; yEnc 0 (1/1)&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># - [PRiVATE]-[WtFnZb]-[5]-[1/filename] - &quot;&quot; yEnc</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1"># NOTE: Requires Python and lxml (sudo apt install python3-lxml python-lxml)</span>
+<span class="c1">#</span>
+
+<span class="c1">### NZBGET SCAN SCRIPT</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Exit codes used by NZBGet</span>
+<span class="n">POSTPROCESS_SUCCESS</span> <span class="o">=</span> <span class="mi">93</span>
+<span class="n">POSTPROCESS_NONE</span> <span class="o">=</span> <span class="mi">95</span>
+<span class="n">POSTPROCESS_ERROR</span> <span class="o">=</span> <span class="mi">94</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[ERROR] Python lxml required. Please install with &quot;sudo apt install python-lxml&quot; or &quot;pip install lxml&quot;.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="n">patterns</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(?P&lt;prefix&gt;.*\[PRiVATE\]-\[WtFnZb\]-)&#39;</span>
+               <span class="sa">r</span><span class="s1">&#39;\[(?P&lt;total&gt;\d+)\]-\[(?P&lt;segment&gt;\d+)\/(?P&lt;filename&gt;.{3,}?)\]&#39;</span>
+               <span class="sa">r</span><span class="s1">&#39;\s+-\s+&quot;&quot;\s+yEnc\s+&#39;</span><span class="p">,</span>
+               <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">),</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(?P&lt;prefix&gt;.*\[PRiVATE\]-\[WtFnZb\]-)&#39;</span>
+               <span class="sa">r</span><span class="s1">&#39;\[(?P&lt;filename&gt;.{3,}?)\]-\[(?P&lt;segment&gt;\d+)/(?P&lt;total&gt;\d+)\]&#39;</span>
+               <span class="sa">r</span><span class="s1">&#39;\s+-\s+&quot;&quot;\s+yEnc\s+&#39;</span><span class="p">,</span>
+               <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">))</span>
+
+<span class="n">nzb_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;NZBNP_DIRECTORY&#39;</span><span class="p">)</span>
+<span class="n">nzb_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;NZBNP_FILENAME&#39;</span><span class="p">)</span>
+<span class="n">nzb_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;NZBNP_NZBNAME&#39;</span><span class="p">)</span>
+<span class="n">nzb_file_naming</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;NZBOP_FILENAMING&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nzb_dir</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">nzb_filename</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">nzb_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please run as NZBGet plugin&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nzb_file_naming</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">nzb_file_naming</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;nzb&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[ERROR] NZBGet setting FileNaming (under Download Queue) &#39;</span>
+          <span class="sa">u</span><span class="s1">&#39;must be set to &quot;Nzb&quot; for this extension to work correctly, exiting.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">nzb_dir</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[ERROR] NZB directory doesn</span><span class="se">\&#39;</span><span class="s1">t exist, exiting&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">nzb_filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.nzb&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[ERROR] </span><span class="si">{}</span><span class="s1"> is not a .nzb file.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nzb_filename</span><span class="p">))</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="n">nzb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nzb_dir</span><span class="p">,</span> <span class="n">nzb_filename</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">nzb</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[ERROR] </span><span class="si">{nzb}</span><span class="s1"> doesn</span><span class="se">\&#39;</span><span class="s1">t exist, exiting&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nzb</span><span class="o">=</span><span class="n">nzb</span><span class="p">))</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nzb</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+<span class="n">changed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">file_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">totals</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">getiterator</span><span class="p">(</span><span class="s1">&#39;{http://www.newzbin.com/DTD/2003/nzb}file&#39;</span><span class="p">):</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">subject</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[DETAIL] No subject in &lt;file&gt;, skipping&#39;</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="n">file_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">subject</span><span class="p">)</span> <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">]</span>
+    <span class="n">matched</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matched</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[INFO] No pattern matching subject, exiting.&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_NONE</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">matched</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[ERROR] Multiple patterns matched, exiting.&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_ERROR</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">matched</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.par2&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[INFO] par2 exists, exiting&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_NONE</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;segment&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[DETAIL] Segment index is greater then total, skipping&#39;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># NZBGet subject parsing changes when duplicate filenames are present</span>
+    <span class="c1"># prefix duplicates to avoid that</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_count</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+
+    <span class="n">filenames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;WtFnZb &quot;</span><span class="si">{filename}</span><span class="s1">&quot; yEnc (</span><span class="si">{segment}</span><span class="s1">/</span><span class="si">{total}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">],</span>
+        <span class="n">segment</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;segment&#39;</span><span class="p">],</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[INFO] New subject </span><span class="si">{subject}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">changed</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">totals</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]))</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[WARNING] No subject changed, exiting.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_NONE</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">totals</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[WARNING] Mixed values for number of total segments, exiting.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_NONE</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">totals</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">!=</span> <span class="n">file_count</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[WARNING] Listed segment count does not match &lt;file&gt; count, exiting.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_NONE</span><span class="p">)</span>
+
+<span class="n">org</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.wtfnzb.original.processed&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nzb</span><span class="p">)</span>
+<span class="n">exists_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+    <span class="n">exists_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">org</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">.wtfnzb.original.processed&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nzb</span><span class="p">,</span> <span class="n">exists_counter</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[INFO] Preserving original nzb as </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">org</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">nzb</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;[INFO] Writing </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nzb</span><span class="p">))</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nzb</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span>
+        <span class="n">xml_declaration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">docinfo</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+        <span class="n">doctype</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">docinfo</span><span class="o">.</span><span class="n">doctype</span><span class="p">))</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">POSTPROCESS_SUCCESS</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This script doesn't always work and is often needed if you use a certain indexer.</p>
+<p>It might be better to use the following Sonarr Regex in your release profile</p>
+<p><a href="/Sonarr/Sonarr-Release-Profile-RegEx/#su-season-pack-issue">su season pack issue</a></p>
+</div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">July 18, 2021 16:38:01</span>
+      
+    
+  </small>
+</div>
+                  
+                
+              
+    <footer class="sponsorship">
+        <hr>
+        <a href="https://github.com/sponsors/TRaSH-" title="Buy me a Coffee"><img src="/img/buy-me-a-coffee.png" alt="Buy me a coffee" width="137" height="39">
+        </a>
+        <hr>
+    </footer>
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Paths-and-Categories/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Path and Categories" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Path and Categories
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../SABnzbd/" class="md-footer__link md-footer__link--next" aria-label="Next: SABnzbd" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SABnzbd
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 TRaSH
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://trash-guides.info/discord" target="_blank" rel="noopener" title="trash-guides.info" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/TRaSH-/Guides" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+        lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>

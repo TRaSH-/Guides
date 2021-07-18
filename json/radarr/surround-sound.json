@@ -1,0 +1,14 @@
+{
+  "trash_id": "43bb5f09c79641e7a22e48d440bd8868",
+  "name": "Surround Sound",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "dts\\-?(hd|x)|truehd|atmos|dd(\\+|p)(5|7)",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+          "value": "dts\\-?(hd|x)|truehd|atmos|dd(\\+|p)(5|7)"
+      }
+  }]
+}

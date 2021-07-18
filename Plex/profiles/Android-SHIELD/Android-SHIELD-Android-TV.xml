@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Client name="SHIELD Android TV">
+  <Identification>
+    <Header name="User-Agent" substring="SHIELD Android TV" />
+  </Identification>
+  <TranscodeTargets>
+    <VideoProfile container="mkv" codec="h264" audioCodec="aac" context="streaming" />
+    <MusicProfile container="flac" codec="flac" id="StereoMusicTranscodeProfile" />
+    <PhotoProfile container="jpeg" />
+  </TranscodeTargets>
+  <DirectPlayProfiles>
+    <VideoProfile container="mkv" codec="vp9,hevc,h265,mpeg1video,mpeg2video,h264,mpeg4" audioCodec="eac3,ac3,aac,mp3,mp2,pcm,flac,alac,truehd,dca" subtitleFormat="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="mp4" codec="hevc,h265,mpeg1video,mpeg2video,h264,mpeg4" audioCodec="eac3,ac3,aac,mp3,mp2,pcm,flac,alac,truehd,dca" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="asf" codec="wmv3,wmv3,vc1" audioCodec="wmav2,wmav2,wmapro,wmavoice,pcm" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="avi" codec="h264,msmpeg4v3,mpeg4,mjpeg" audioCodec="mp3,ac3,eac3,dca,pcm" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="mpeg" codec="h264,mpeg1video,mpeg2video" audioCodec="mp2,mp3,ac3,eac3,aac,pcm" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="flv" codec="h264" audioCodec="aac,ac3,eac3,mp3,pcm" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="mpegts" codec="h264,mpeg2video,vc1" audioCodec="mp2,mp3,ac3,eac3,dca,pcm" subtitleCodec="srt,ass,smi,ssa,subrip,pgs"/>
+    <VideoProfile container="wtv" codec="mpeg2video" audioCodec="ac3,eac3,aac,pcm"/>
+    <VideoProfile container="3gpp" codec="h264,mpeg4" audioCodec="aac,he-aac"/>
+    <MusicProfile container="mp4" codec="aac" />
+    <MusicProfile container="mp3" codec="mp2,mp3" />
+    <MusicProfile container="flac" codec="flac" />
+    <MusicProfile container="ogg" codec="vorbis" />
+    <MusicProfile container="ac3" codec="ac3"/>
+    <MusicProfile container="wav" codec="pcm"/>
+    <PhotoProfile container="jpeg,gif,bmp,png" />
+  </DirectPlayProfiles>
+  <ContainerProfiles>
+    <VideoContainer name="mp4">
+      <Limitations>
+        <Match name="part.optimizedForStreaming" value="1" />
+      </Limitations>
+    </VideoContainer>
+  </ContainerProfiles>
+  <CodecProfiles>
+    <VideoCodec name="*">
+      <Limitations>
+        <UpperBound name="video.width" value="3840" isRequired="true" />
+        <UpperBound name="video.height" value="2160" isRequired="true" />
+        <UpperBound name="video.bitDepth" value="10" />
+      </Limitations>
+    </VideoCodec>
+    <VideoCodec name="h264">
+      <Limitations>
+        <Match name="video.profile" list="baseline|main|high" />
+      </Limitations>
+    </VideoCodec>
+    <VideoAudioCodec name="aac">
+      <Limitations>
+        <UpperBound name="audio.channels" value="8" />
+      </Limitations>
+    </VideoAudioCodec>
+  </CodecProfiles>
+</Client>

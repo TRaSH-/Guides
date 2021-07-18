@@ -1,0 +1,17 @@
+{
+  "trash_id": "5153ec7413d9dae44e24275589b5e944",
+  "trash_score": "2100",
+  "name": "BHDStudio",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "BHDStudio",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bBHDStudio\\b"
+      }
+    }
+  ]
+}

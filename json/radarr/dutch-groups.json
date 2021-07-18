@@ -1,0 +1,14 @@
+{
+  "trash_id": "9de657fd3d327ecf144ec73dfe3a3e9a",
+  "name": "Dutch Groups",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "Dutch Groups",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+          "value": "-CyTSuNee|-SHiTSoNy|-QoQ"
+      }
+  }]
+}

@@ -1,0 +1,35 @@
+{
+  "trash_id": "90cedc1fea7ea5d11298bebd3d1d3223",
+  "trash_score": "-9999",
+  "name": "EVO (no WEBDL)",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "EVO",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bEVO\\b"
+      }
+    },
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "trash_id": "4a3b087eea2ce012fcc1ce319259a3be",
+  "name": "Anime Dual Audio",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Dual Audio",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "dual.?audio"
+      }
+    },
+    {
+      "name": "BluDragon",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "bludragon"
+      }
+    },
+    {
+      "name": "EN+JA",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "EN\\+JA|JA\\+EN"
+      }
+    },
+    {
+      "name": "ZR",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bZR\\b"
+      }
+    },
+    {
+      "name": "Japanese Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    }
+  ]
+}

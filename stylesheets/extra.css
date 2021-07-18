@@ -1,0 +1,30 @@
+:root > * {
+  /* Footer */
+  --md-footer-bg-color: hsla(232, 54%, 41%, 1);
+  --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+}
+
+footer.sponsorship {
+  text-align: center;
+
+  hr {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+th {
+  color:white !important;
+  background-color:hsla(232, 54%, 41%, 1) !important;
+  font-weight: bold;
+}
+/* td a {
+  color: white !important;
+} */
+td a:hover {
+  color: red !important;
+}
+
+.md-content {
+  --md-typeset-a-color: #1372EB;
+}

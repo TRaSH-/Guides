@@ -1,0 +1,14 @@
+{
+  "trash_id": "e114f2f915fa2414b60683cd73c554f3",
+  "name": "10 Bit",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "10 Bit",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+          "value": "\\b10bit(\\b|\\d)"
+      }
+  }]
+}

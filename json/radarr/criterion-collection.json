@@ -1,0 +1,25 @@
+{
+  "trash_id": "e0c07d59beb37348e975a930d5e50319",
+  "trash_score": "170",
+  "name": "Criterion Collection",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [{
+          "name": "Criterion",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "criterion"
+          }
+      },
+      {
+          "name": "CC",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "\\bCC\\b"
+          }
+      }
+  ]
+}

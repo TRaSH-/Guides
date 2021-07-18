@@ -1,0 +1,114 @@
+{
+  "trash_id": "fd7da02c647dd3f1b6757e150fffc5ff",
+  "name": "Streaming Services",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+          "name": "Amazon",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(amzn|amazon).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Netflix",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(nf|netflix).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "AppleTV+",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(atvp).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Disney+",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(dsnp|dsny|disney).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "DCU",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(dcu).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "HBO Max",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(hmax).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "HBO",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(hbo).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Youtube Red",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(red).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Quibi",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(qibi).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "iTunes",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(it).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Hulu",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(hulu).?web.?(dl|rip)"
+          }
+      },
+      {
+          "name": "Peacock",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": false,
+          "fields": {
+              "value": "(pcok|peacock).?web.?(dl|rip)"
+          }
+      }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "trash_id": "060059fc2b8759d9f314e1f18c76fd4a",
+  "name": "Dolby TrueHD/ATMOS",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "truehd|atmos",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+          "value": "truehd|atmos"
+      }
+  }]
+}

@@ -1,0 +1,35 @@
+{
+  "trash_id": "26fa26253af4001701fedb56cec376dc",
+  "trash_score": "100",
+  "name": "HQ-WEBDL",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "P2P Groups",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "-TOMMY|-BLUTONiUM|-NTG|-TEPES|-KiNGS|-NTb|-CMRG|AJP69|-PHOENiX|-monkee|-MZABI|ROCCaT"
+      }
+    },
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 8
+      }
+    }
+  ]
+}

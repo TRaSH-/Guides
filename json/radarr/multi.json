@@ -1,0 +1,14 @@
+{
+  "trash_id": "4b900e171accbfb172729b63323ea8ca",
+  "name": "Multi",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "Multi",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+          "value": "\\bMulti(\\b|\\d)"
+      }
+  }]
+}

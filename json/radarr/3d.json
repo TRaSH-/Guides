@@ -1,0 +1,15 @@
+{
+  "trash_id": "b8cd450cbfa689c0259a01d9e29ba3d6",
+  "trash_score": "-9999",
+  "name": "3D",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "3D",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+          "value": "\\b3d|sbs|half[ .-]ou|half[ .-]sbs\\b"
+      }
+  }]
+}

@@ -1,0 +1,26 @@
+{
+  "trash_id": "7357cf5161efbf8c4d5d0c30b4815ee2",
+  "trash_score": "-9999",
+  "name": "Obfuscated",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Obfuscated",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "(-4P|-4Planet|-AsRequested|-BUYMORE|-Chamele0n|-GEROV|-iNC0GNiTO|-NZBGeek|-Obfuscated|-postbot|-Rakuv|-Scrambled|-WhiteRev|-xpost|-WRTEAM|-CAPTCHA)\\b"
+      }
+    },
+    {
+      "name": "Retagged",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "(\\[rartv\\]|\\[eztv\\]|\\[TGx\\])"
+      }
+    }
+  ]
+}

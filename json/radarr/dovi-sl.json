@@ -1,0 +1,25 @@
+{
+  "trash_id": "462c511637953269a9053d1ed1ffc3a5",
+  "trash_score": "295",
+  "name": "DoVi (SL)",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [{
+          "name": "Dolby Vision (Single Layer)",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "\\b(sl[ .]dv|single[ .]layer[ .]dovi)\\b"
+          }
+      },
+      {
+          "name": "Remux",
+          "implementation": "QualityModifierSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": 5
+          }
+      }
+  ]
+}

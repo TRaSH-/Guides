@@ -1,0 +1,24 @@
+{
+  "trash_id": "9170d55c319f4fe40da8711ba9d8050d",
+  "name": "x265",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+          "name": "x265",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "[xh][ .]?265|\\bHEVC(\\b|\\d)"
+          }
+      },
+      {
+          "name": "Remux",
+          "implementation": "QualityModifierSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": 5
+          }
+      }
+  ]
+}

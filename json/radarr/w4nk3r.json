@@ -1,0 +1,17 @@
+{
+  "trash_id": "ffebc267e9c98d3d383f37b238550079",
+  "trash_score": "2900",
+  "name": "W4NK3R",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "W4NK3R",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bW4NK3R\\b"
+      }
+    }
+  ]
+}

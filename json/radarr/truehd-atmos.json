@@ -1,0 +1,61 @@
+{
+  "trash_id": "496f355514737f7d83bf7aa4d24f8169",
+  "trash_score": "500",
+  "name": "TrueHD ATMOS",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+          "name": "TrueHD",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "TrueHD"
+          }
+      },
+      {
+          "name": "ATMOS",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": false,
+          "required": true,
+          "fields": {
+              "value": "\\bATMOS(\\b|\\d)"
+          }
+      },
+      {
+          "name": "Not Dolby Digital Plus ",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "[^-]dd[p+]|eac3"
+          }
+      },
+      {
+          "name": "Not DTS",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "\\bDTS(\\b|\\d)"
+          }
+      },
+      {
+          "name": "Not Basic Dolby Digital",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "(?<!e)ac3"
+          }
+      },
+      {
+          "name": "Not FLAC",
+          "implementation": "ReleaseTitleSpecification",
+          "negate": true,
+          "required": true,
+          "fields": {
+              "value": "\\bFLAC(\\b|\\d)"
+          }
+      }
+  ]
+}

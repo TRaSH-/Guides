@@ -1,0 +1,15 @@
+{
+    "name": "TRaSH Guides",
+    "short_name": "Guidarr",
+    "description": "Guides mainly for Sonarr/Radarr/Bazarr and everything related to it.",
+    "icons": [
+      {
+        "src": "img/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#4051B5",
+    "background_color": "#2E303E",
+    "display": "standalone"
+  }

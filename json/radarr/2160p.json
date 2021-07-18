@@ -1,0 +1,44 @@
+{
+  "trash_id": "fb392fb0d61a010ae38e49ceaa24a1ef",
+  "trash_score": "100",
+  "name": "2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
+      "name": "HDR: HDR",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bHDR(\\b|\\d)"
+      }
+    },
+    {
+      "name": "DoVi: Dolby Vision",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\b(dv|dovi|dolby[ .]vision)\\b"
+      }
+    },
+    {
+      "name": "HDR (undefined): FraMeSToR",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\bFraMeSToR\\b"
+      }
+    }
+  ]
+}

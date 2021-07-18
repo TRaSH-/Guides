@@ -1,0 +1,17 @@
+{
+  "trash_id": "96848626e1570c122aba8642fe2714a2",
+  "trash_score": "2900",
+  "name": "HQMUX",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "HQMUX",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bHQMUX\\b"
+      }
+    }
+  ]
+}
